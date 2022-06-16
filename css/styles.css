@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     text-align: center;
+    font-family: 'Anek Malayalam', sans-serif;
 }
 
 .grid-container {
@@ -15,12 +16,16 @@
 
 .header {
     grid-area: header;
-    width: 100vw;
+    width: 100%;
     height: 75px;
     padding: .5em;
     display: flex;
     justify-content: space-between;
     background-color: #7376BE;
+}
+
+.main {
+    background-color: #f1eeee;
 }
 
 .user-info, 
@@ -33,6 +38,7 @@
     margin-left: 0.3em;
     padding: 0 0.3em;
     border-left: solid #404040 1px;
+    height: 75px;
 }
     
 .nav {
@@ -53,6 +59,17 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    margin-left: .3em;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 100px;
+}
+
+
+.current-user > * {
+    margin-left: 1em;
 }
 
 nav {
@@ -65,11 +82,12 @@ nav {
 }
 
 img {
-    max-width: 90vw;
+    max-width: 100%;
 }
 
 .widget-container-full, .widget-container-half {
     width: 95vw;
+    margin: auto;
 }
 
 header,
@@ -96,8 +114,8 @@ h1 {
 }
 
 h2 {
-    font-size: 1em;
-    padding: 1em 0 1em 1em;
+    font-size: .8em;
+    padding: .5em 0;
 }
 
 .user-info > *{
@@ -106,11 +124,236 @@ h2 {
 
 #notification-bell {
     padding: 0;
-    margin-right: .5em;
+    margin: 0 .5em;
 }
 
 header * {
     color: #FDFDFE;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.headline {
+    width: 100%;
+    margin: 0;
+    max-width: 30%;
+}
+
+.tab {
+    width: 100%;
+    background-color: #F7F7F7;
+    padding: 1em; 
+    border-left: 1px #cccccc solid;
+    border-bottom: 1px #cccccc solid;   
+}
+
+.traffic-nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.traffic-nav-link {
+    list-style: none;
+    font-weight: bold;
+    border-radius: 80%;
+    padding: .5em;
+    transition: background-color .5s;
+}
+
+.traffic-nav-link:hover {
+    background-color: #81C98F;
+    color: white;
+}
+
+canvas {
+    display: none;
+}
+
+h3 {
+    text-align: left;
+    margin-left: 1em;
+}
+
+.traffic-header > * {
+    margin: 0;
+}
+
+.traffic,
+.daily,
+.mobile,
+.social,
+.members,
+.recent-activity,
+.message,
+.members-container,
+.activity-container {
+    border-bottom: 2px #b1b1b1 solid;
+}
+
+.members-container,
+.activity-container {
+    width: 80%;
+    margin: auto;
+    padding: 1em;
+}
+
+.social-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #F7F7F7;
+    border: solid 2px #cccccc;
+    width: 80%;
+    margin: 1em auto;
+}
+
+.social-container > * {
+    padding: 1em;
+    text-align: left;
+}
+
+.social-text > * {
+    margin: 0;
+}
+
+.social-text :first-child{
+    font-size: 1.5em;
+    color: #7376BE;
+}
+
+.social-text :last-child {
+    font-size:  3em;
+}
+
+.social-image {
+    background-color: #7376BE;
+    border-radius: 50%;
+    margin: 1em;
+}
+
+.members-container p,
+.activity-container p {
+    margin: 0;
+}
+
+.widget-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-field,
+.form-area {
+    width: 80%;
+    background-color: #e2e2e2;
+    text-align: left;
+    transition: background-color .5s;
+}
+
+#userField:focus,
+#messageField:focus {
+    background-color: white;
+}
+
+.widget-container > * {
+    margin: 0 auto 1em;
+    border-radius: 7px;
+}
+
+.form-field {
+    padding: .5em
+}
+
+.form-area {
+    padding: .5em .5em 5em .5em;
+}
+
+#send {
+    width: 80%;
+    background-color: #7376BE;
+    color: whitesmoke;
+    padding: 1em 0;
+}
+
+.switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-left: 1em;
+    max-width: 260px;
+}
+
+.toggle {
+    width: 80px;
+    border-radius: 8px;
+}
+
+#timezone option {
+    text-align: left;
+}
+
+.settings-button {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.settings-button button {
+    width: 40%;
+    padding: 1em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 15px;
+}
+
+#save {
+    background-color: #4D4C72;
+}
+
+#cancel {
+    background-color: #747474;
+}
+
+/* code to change color of selection arrow, adapated from https://stackoverflow.com/questions/38870246/html-css-change-color-of-select-arrow */
+.select-box {
+    width: 200px;
+    overflow: hidden;
+    border: 1px solid #000;
+    position: relative;
+    padding: 0;
+    margin: 1em auto 2em;
+}
+
+.select-box:after {
+    width: 0; 
+    height: 0; 
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #7376BE;
+    position: absolute;
+    top: 40%;
+    right: 5px;
+    content: "";
+    z-index: 98;
+}
+   
+.select-box select {
+    width: 220px;
+    border: 0;
+    position: relative;
+    z-index: 99;
+    background: none;
+}
+
+.link-span {
+    display: none;
 }
 
 
@@ -126,7 +369,7 @@ header * {
         grid-template-columns: 50%;
     } 
 
-    .traffic, .social, .members, .message, .activity, .settings {
+    .traffic, .social, .members, .message, .recent-activity, .settings, .dashboard-header {
         grid-column: 1 / span 2;
     }
     .daily {
@@ -134,6 +377,7 @@ header * {
     } 
     .mobile {
         grid-column: 2 / span 1;
+        border-left: 2px #b1b1b1 solid;
     }
 
     .logo {
@@ -144,12 +388,12 @@ header * {
         width: 75px;
         height: 75px;
     }
-    .widget-container-full {
-        width: 90vw;
-    }
+
+    .widget-container-full,
     .widget-container-half {
-    width: 45vw;
+        width: 90%;
     }
+
     .nav {
         flex-direction: column;
         justify-content: flex-start;
@@ -164,6 +408,101 @@ header * {
     }
     h2 {
         font-size: 1.5em;
+    }
+
+    .headline {
+        max-width: 180px;
+    }
+    
+    .current-user > * {
+        margin-left: 3em;
+    }
+
+    #notification-bell {
+        margin: 0 3em;
+    }
+
+    .traffic-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1em;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .socials-container {
+        display: flex;
+    }
+
+    .social-container {
+        margin: 1em;
+    }
+
+    .members-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .link-span {
+        display: block;
+        padding: 5em;
+    }
+
+    .activity-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        max-height: 100px;
+    }
+
+    .activity-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .activity-info > * {
+        padding: 1em;
+    }
+
+    .message > * {
+        width: 95%;
+        margin: 1em auto;
+    }
+
+    .widget-container > *,
+    #send {
+        width: 100%;
+    }
+
+    .switch {
+        margin-bottom: 2em;
+        font-size: 1.1em;
+        max-width: 300px;
+    }
+
+    .select-box {
+        width: 95%;
+    }
+
+    .select-box select {
+        width: 100%;
+    }
+
+    .settings-button {
+        width: 95%;
+    }
+
+    .settings-button button {
+        width: 45%
+    }
+
+    a .logo {
+        padding: .2em;
     }
 }
 
