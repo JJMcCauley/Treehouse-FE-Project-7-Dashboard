@@ -159,18 +159,14 @@ header * {
 .traffic-nav-link {
     list-style: none;
     font-weight: bold;
-    border-radius: 20px;
     padding: .5em;
     transition: background-color .5s;
 }
 
-.traffic-nav-link:hover {
+.green-background {
     background-color: #81C98F;
     color: white;
-}
-
-canvas {
-    display: none;
+    border-radius: 20px;
 }
 
 h3 {
@@ -326,6 +322,10 @@ h3 {
 #cancel {
     background-color: #747474;
 }
+
+/* canvas {
+    background-color: red;
+} */
 
 /* code to change color of selection arrow, adapated from https://stackoverflow.com/questions/38870246/html-css-change-color-of-select-arrow */
 .select-box {
