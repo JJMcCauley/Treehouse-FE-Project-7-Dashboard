@@ -5,7 +5,7 @@ const alertBanner = document.getElementById('alert');
 alertBanner.innerHTML = 
 `
     <div class="alert-banner">
-        <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to copmlete</p>
+        <p><strong>Alert:</strong> You have <strong>2</strong> new notifications</p>
         <p class="alert-banner-close">x</p>
     </div>
 `
@@ -13,24 +13,13 @@ alertBanner.innerHTML =
 alertBanner.addEventListener('click', e => {
     const element = e.target;
     if (element.classList.contains("alert-banner-close")) {
-        alertBanner.style.display = "none"
+        alertBanner.style.display = "none";
     }
 });
 
 // Traffic Chart
 
 let trafficCanvas = document.getElementById('traffic-chart')
-
-let trafficData = {
-    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", 
-    "4-10", "11-17", "18-24", "25-31"],
-    datasets: [{
-        data: [750, 1250, 1000, 2000, 15000, 1750, 1250, 1850, 2250, 1500,
-        2500],
-        backgroundColor: 'rgba(116, 119, 191, .3)',
-        borderWidth: 1,
-    }]
-};
 
 let trafficOptions = {
     backgroundColor: 'rgba(112, 104, 201, .5)',
@@ -51,11 +40,64 @@ let trafficOptions = {
     }
 };
 
+let trafficData = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", 
+    "4-10", "11-17", "18-24", "25-31"],
+    datasets: [{
+        label: '# of hits over time period',
+        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
+        2500],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+    }]
+};
+
 let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
     data: trafficData,
     options: trafficOptions
 });
+
+const trafficButtons = document.querySelectorAll('.traffic-nav-link');
+const trafficList =  document.querySelector('.traffic-nav');
+
+const selectedTraffic = (index) => {
+    element = trafficButtons[index];
+    element.classList.add('green-background');
+    //hourly
+    if (index === 'hourly') {
+        let trafficChart = new Chart(trafficCanvas, {
+            type: 'line',
+            data: trafficData,
+            options: trafficOptions
+        });
+
+    }
+    //Daily
+    else if (index === 1) {
+
+    }
+    //Monthly
+    else if (index === 2) {
+
+    }
+    //Yearly
+    else if (index === 3) {
+
+    }
+}
+
+trafficList.addEventListener('click', (e) => {
+    if (e.target.className = 'traffic-nav-link')
+    {
+        let choice = e.target.textContent.toLowerCase();
+        console.log(trafficButtons)
+        console.log(choiceIndex);
+        selectedTraffic(choice);
+    }
+});
+
+// selectedTraffic('hourly');
 
 // Daily Traffic 
 
@@ -145,3 +187,49 @@ send.addEventListener('click', (e) => {
     }
     e.preventDefault();
 });
+
+// notification bell
+
+let readNotifications = 0;
+let notifications = [
+    `You have one new follower`,
+    `Your Friend Rachel Hale sent you a message`
+];
+let unreadNotifications = notifications.length;
+const notificationNumberDisplay = document.getElementById('notification-number');
+const notificationBell = document.getElementById('notification-bell')
+let hasClicked = false;
+
+const displayNumberOfNotifications = () => {
+    notificationNumberDisplay.textContent = unreadNotifications;
+}
+
+notificationBell.addEventListener('click', (e) => {
+    if (hasClicked) {
+        hasClicked = false;
+        notificationBell.classList.remove('green-background');
+        ulElement = document.getElementById('ul-notification');
+        ulElement.remove();
+        notificationNumberDisplay.parentElement.style.display = 'none';
+        alertBanner.style.display = 'none';
+    }
+    else if (unreadNotifications > 0) {
+        hasClicked = true;
+        const ul = document.createElement('ul');
+        ul.className = 'ul-notification';
+        ul.id = 'ul-notification';
+        notificationBell.classList.add('green-background');
+        for (let i = 0; i < unreadNotifications; i++){
+            const li = document.createElement('li');
+            li.textContent = notifications[i];
+            li.className = 'li-notification';
+            li.id = 'li-notification';
+            ul.appendChild(li);      
+        }
+        notifications = [];
+        unreadNotifications = 0;
+        notificationBell.insertAdjacentElement("afterend", ul);
+    }
+});
+
+displayNumberOfNotifications();

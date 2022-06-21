@@ -123,8 +123,10 @@ h2 {
 }
 
 #notification-bell {
-    padding: 0;
+    padding: .5em;
     margin: 0 .5em;
+    height: 40px;
+    width: 40px;
 }
 
 header * {
@@ -323,9 +325,6 @@ h3 {
     background-color: #747474;
 }
 
-/* canvas {
-    background-color: red;
-} */
 
 /* code to change color of selection arrow, adapated from https://stackoverflow.com/questions/38870246/html-css-change-color-of-select-arrow */
 .select-box {
@@ -360,6 +359,69 @@ h3 {
 
 .link-span {
     display: none;
+}
+
+/* CSS to make notification counter adapted from https://stackoverflow.com/questions/20953355/place-a-circle-with-notification-count-on-top-corner */
+
+.box {
+    border:#aaa;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    position:relative;
+}
+
+#noti-count {
+    position:absolute;
+    top: -5px;
+    right: 10px;
+    background-color:#81C98F;
+    color:#fff;
+    padding:5px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    width:20px;
+    height:20px;
+    text-align:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ul-notification {
+    top: 30px;
+    position: absolute;
+    left: -73px;
+    background-color: #4D4C72;
+    padding: .5em;
+}
+
+.li-notification {
+    text-align: center;
+    list-style: none;
+    background-color: #7376BE;
+    width: 132px;
+    font-size: 1em;
+    margin: 0.5em 1em;
+    padding: 0.5em;
+}
+
+.alert-banner :first-child{
+    background-color: #81C98F;
+    color: white;
+    margin: 0;
+    font-family: sans-serif;
+    padding: 1em;
+}
+
+.alert-banner-close {
+    width: 25%;
+    margin: auto;
+    background-color: tomato;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: white;
 }
 
 
@@ -424,9 +486,6 @@ h3 {
         margin-left: 3em;
     }
 
-    #notification-bell {
-        margin: 0 3em;
-    }
 
     .traffic-header {
         display: flex;
@@ -511,6 +570,40 @@ h3 {
     a .logo {
         padding: .2em;
     }
+
+    #noti-count {
+        top: -5px;
+        right: 5px;
+        height: 30px;
+        width: 30px;
+    }
+
+    #notification-bell {
+        height: 60px;
+        width: 60px;
+    }
+
+    .li-notification {
+        width: 300px;
+        font-size: 1.3em;
+        margin: .5em 1em;
+        padding: .5em;
+    }
+
+    .ul-notification {
+        padding: 1em;
+        top: 57px;
+        left: -141px;
+    }
+
+    .alert-banner :first-child{
+        width: 50%;
+        margin: auto;
+    }
+
+    .alert-banner-close {
+        font-size: 2em;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -529,5 +622,9 @@ h3 {
         border-left: 2px #b1b1b1 solid;
     }
 
-
+    .alert-banner :first-child{
+        width: 30%;
+    }
 }
+
+
