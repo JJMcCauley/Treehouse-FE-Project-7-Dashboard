@@ -159,7 +159,7 @@ header * {
 .traffic-nav-link {
     list-style: none;
     font-weight: bold;
-    border-radius: 80%;
+    border-radius: 20px;
     padding: .5em;
     transition: background-color .5s;
 }
@@ -178,7 +178,7 @@ h3 {
     margin-left: 1em;
 }
 
-.traffic-header > * {
+.traffic-header ul {
     margin: 0;
 }
 
@@ -192,6 +192,12 @@ h3 {
 .members-container,
 .activity-container {
     border-bottom: 2px #b1b1b1 solid;
+    padding-bottom: 1em;
+}
+
+.members :last-child,
+.recent-activity :last-child{
+    border-bottom: none;
 }
 
 .members-container,
@@ -431,6 +437,7 @@ h3 {
 
     img {
         width: 100%;
+        max-height: 300px;
     }
 
     .socials-container {
@@ -449,7 +456,7 @@ h3 {
 
     .link-span {
         display: block;
-        padding: 5em;
+        padding: 5em 0;
     }
 
     .activity-container {
@@ -490,7 +497,7 @@ h3 {
     }
 
     .select-box select {
-        width: 100%;
+        width: 120%;
     }
 
     .settings-button {
@@ -508,93 +515,19 @@ h3 {
 
 @media screen and (min-width: 1024px) {
     .main {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
-    .traffic, .social {
+
+    .traffic, .social, .settings, .dashboard-header {
         grid-column: 1 / span 2;
     }
     .daily, .members, .message {
         grid-column: 1 / span 1;
     } 
-    .mobile, .activity, .settings {
+    .mobile, .recent-activity, .settings {
         grid-column: 2 / span 1;
+        border-left: 2px #b1b1b1 solid;
     }
+
+
 }
-
-
-
-
-/* 
-
-
-
-.title,
-h2 {
-    white-space: nowrap;
-}
-
-
-.tab {
-    height: 150px;
-    width: 150px;
-    background-color: red;
-}
-
-
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header,
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-h1 {
-    font-size: 1.3em;
-    font-weight: normal;
-}
-
-h2 {
-    font-size: .8em;
-}
-
-.profile-picture {
-    height: 50px;
-    border-radius: 50%;
-}
-
-header {
-    background-color: #7376BE;
-}
-
-header * {
-    color: #FDFDFE;
-}
-
-.logo {
-    fill: #FDFDFE;
-}
-
-nav {
-    background-color: #4D4C72;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-}
-
-.user-info > * {
-    padding: .5em;
-}
-
-#title-div {
-    flex-grow: 2;
-} */
