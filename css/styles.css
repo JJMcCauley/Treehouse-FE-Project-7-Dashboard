@@ -426,6 +426,10 @@ h3 {
     padding: 0.5em;
 }
 
+.alert-banner {
+    text-align: center;
+}
+
 .alert-banner :first-child{
     background-color: #81C98F;
     color: white;
