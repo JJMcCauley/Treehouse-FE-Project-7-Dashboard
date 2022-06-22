@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    text-align: center;
     font-family: 'Anek Malayalam', sans-serif;
 }
 
@@ -129,6 +128,12 @@ h2 {
     width: 40px;
 }
 
+.box :hover {
+    fill: #81C98F;
+    background-color: white;
+    border-radius: 20px;
+}
+
 header * {
     color: #FDFDFE;
 }
@@ -180,6 +185,11 @@ h3 {
 .traffic-header ul {
     margin: 0;
 }
+
+.headline {
+    text-align: center;
+}
+
 
 .traffic,
 .daily,
@@ -243,6 +253,14 @@ h3 {
 .members-container p,
 .activity-container p {
     margin: 0;
+}
+
+.members-container,
+.activity-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
 }
 
 .widget-container {
@@ -490,6 +508,7 @@ h3 {
     .profile-picture {
         width: 75px;
         height: 75px;
+        padding: .5em;
     }
 
     .widget-container-full,
@@ -543,9 +562,8 @@ h3 {
     }
 
     .members-container {
-        display: flex;
         justify-content: space-between;
-        align-items: center;
+        flex-direction: row;
     }
 
     .link-span {
@@ -558,16 +576,24 @@ h3 {
         align-items: center;
         justify-content: space-between;
         padding: 0;
-        max-height: 100px;
+        max-height: 134px;
+        flex-direction: row;        
     }
 
-    .activity-info {
+    .activity-info,
+    .member-info {
         display: flex;
         align-items: center;
     }
 
-    .activity-info > * {
-        padding: 1em;
+    .activity-info :first-child,
+    .member-info :first-child {
+        margin-right: 2em;
+    }
+
+    .activity-info img {
+        height: 100px;
+        width: 100px;
     }
 
     .message > * {
@@ -642,7 +668,14 @@ h3 {
 
     .autocomplete-items {
         width: 40%;
-      }
+    }
+
+    .members-container,
+    .activity-container {
+        text-align: left;
+}
+
+      
 }
 
 @media screen and (min-width: 1024px) {

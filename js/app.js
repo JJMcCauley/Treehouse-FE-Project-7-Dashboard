@@ -511,9 +511,15 @@ const loadSettings = () => {
     }
     timezoneValue = localStorage.getItem('timezoneSetting');
     timezoneInput.value = timezoneValue;
+    if (timezoneValue == 'Select a Timezone' || timezoneValue == null ) {
+        timezoneInput.selectedIndex = 0;
+    }
+
 };
 
 const resetSettings = () => {
+
+    localStorage.clear();
     emailNotificationsInput.value = 'off';
     emailSettingValue = 'off';
     emailNotificationsInput.checked = false;
