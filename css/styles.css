@@ -126,6 +126,10 @@ h2 {
     margin: 0 .5em;
     height: 40px;
     width: 40px;
+    transition: 
+        fill .3s ease-in-out,
+        background-color .3s ease-in-out,
+        border-radius .3s ease-in-out;
 }
 
 .box :hover {
