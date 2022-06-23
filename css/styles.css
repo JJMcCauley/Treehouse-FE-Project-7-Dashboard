@@ -127,9 +127,9 @@ h2 {
     height: 40px;
     width: 40px;
     transition: 
-        fill .3s ease-in-out,
-        background-color .3s ease-in-out,
-        border-radius .3s ease-in-out;
+        fill .5s ease-in-out,
+        background-color .5s ease-in-out,
+        border-radius .5s ease-in-out;
 }
 
 .box :hover {
